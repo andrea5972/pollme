@@ -1,7 +1,10 @@
 from django.db import models
 
-# Create your models here.
 class Question(models.Model):
+    """
+    Database schema for "polls app"
+    Primary Key: "ID"
+    """
     text = models.TextField()
     pub_date = models.DateTimeField('date published')
 
@@ -12,6 +15,11 @@ class Question(models.Model):
         return self.text[:50]
 
 class Choice(models.Model):
+    """
+    Database schema for "polls app"
+    FK Key: "question"
+    Parent Model: Question
+    """
     question = models.ForeignKey(Question, on_delete=models.CASCADE)
     choice_text = models.CharField(max_length=200)
     votes = models.IntegerField(default=0)

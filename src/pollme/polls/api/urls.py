@@ -3,9 +3,7 @@ polls.api.urls conf
 """
 from django.urls import path
 
-from .views import (
-    QuestionListAPIView
-)
+from .views import QuestionListAPIView
 
 
 app_name = "polls_api"
